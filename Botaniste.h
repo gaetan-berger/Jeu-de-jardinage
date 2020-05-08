@@ -3,16 +3,19 @@
 
 #include <string>
 #include "Plante.h"
+#include <vector>
 
 class Botaniste{
-    private:
-        std::string _nomBotaniste;
-
     public:
-        void maturité(Plante *cible);
-        void engrais(Plante * cible);
-        void laisserDormir(Plante * cible);
-        plante(std::string nom);
+      std::string _name;
+      int _argent;
+      int _engrais;
+      std::vector<Plante> _listePlante;
+
+      virtual void dormir();
+      virtual void acheterEngrais();
+      virtual void Plante();
+      virtual void vendre();
 
 };
 
