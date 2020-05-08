@@ -1,29 +1,28 @@
-#ifdef PLANTE_H
+#ifndef PLANTE_H
 #define PLANTE_H
 
 #include <string>
-#include "Botaniste.h"
 
-class Chaton : public Animal {
-/*    private:
-        std::string _name;
-        int _faim;
-        int _ennui;
-        int _fatigue;
-           herite de la classe animal
-           mais on peux ajouter des truc en privé car le chaton ronrone donc on peux
-           int _ronronement */
+class Plante{
     public:
-        void maturité(int développement);
-        void engrais();
-        void taille(int coupé);
-        void hydrater(int eau);
-        void temps(int delai);
+        std::string _name;
+        int _maturite;
+        int _nbTaillee;
+        int _nbArossee;
+        int _valeur;
+        bool _estvivant;
+        bool _aEngrais;
 
-        void afficher();
+        virtual void inspecter();
+        virtual void croissance();
+        virtual void setNbTaillee(int nb){this->_nbTaillee=nb;}
+        virtual int getNbTaillee(){return this->_nbTaillee;}
+        virtual void setAEngrais(bool engrais){this->_aEngrais=engrais;}
+        virtual bool getAEngrais(){return this->_aEngrais;}
+        virtual void afficher();
 
-        plante(std::string nom);
-
+        Plante(std::string name);
 };
+
 
 #endif
